@@ -73,7 +73,7 @@ std::ostream& operator<<(std::ostream& out, const Mage& other) {
     return out;
 }
 
-Mage::Mage(Mage&& other) : Character(std::move(other)), mana(other.mana), accesoury_amount(other.accesoury_amount) {
+Mage::Mage(Mage&& other) : Character(std::move(other)), mana(std::move(other.mana)), accesoury_amount(std::move(other.accesoury_amount)) {
     arr = other.arr;
     other.arr = nullptr;
 }
